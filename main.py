@@ -9,6 +9,8 @@ def CreateTree(root):
     if root == None:
         root = node(input('Enter the name of the head of the family : '))
         root.level = 1
+        root.parent = node(None)
+        root.parent.name=''
         dict_data[root.name] = root
         Q.append(root)
     while(True):
@@ -38,17 +40,10 @@ def check_parent(first_name,second_name):
     else:
         return False
 def check_sibling(first_name,second_name):
-    if dict_data[first_name].parent and dict_data[second_name].parent:
-        if dict_data[first_name].parent.name==dict_data[second_name].parent.name:
-            return True
+    if dict_data[first_name].parent.name==dict_data[second_name].parent.name:
+        return True
     return False
 def not_close(first_name,second_name):
-    if not dict_data[first_name].parent:
-        if check_parent(first_name,second_name):
-            return False
-    if not dict_data[second_name].parent:
-        if check_parent(second_name,first_name):
-            return False
     if check_parent(first_name,second_name) or check_parent(second_name,first_name) or check_sibling(first_name,second_name):
         return False
     return True
