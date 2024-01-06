@@ -29,7 +29,20 @@ def CreateTree(root):
             dict_data[i.name] = i
         Q.popleft()
     return root
-
+def check_parent(first_name,second_name):
+    first_person=dict_data[first_name]
+    second_person=dict_data[second_name]
+    while(first_person.level<second_person.level):
+        second_person=second_person.parent
+    if second_person.name==first_person.name:
+        return True
+    else:
+        return False
+def check_sibling(first_name,second_name):
+    if dict_data[first_name].parent and dict_data[second_name].parent:
+        if dict_data[first_name].parent.name==dict_data[second_name].parent.name:
+            return True
+    return False
 dict_data = {}
 Q = deque()
 root = None
