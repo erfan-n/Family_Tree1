@@ -43,6 +43,7 @@ def check_sibling(first_name,second_name):
             return True
     return False
 dict_data = {}
+test = 0
 Q = deque()
 root = None
 root = CreateTree(root)
