@@ -4,9 +4,12 @@ class node:
         self.name = name
         self.parent = None
         self.children = None
+        self.level = None
 def CreateTree(root):
     if root == None:
         root = node(input('Enter the name of the head of the family : '))
+        root.level = 1
+        dict_data[root.name] = root
         Q.append(root)
     while(True):
         children = input(f"Enter the names of {Q[0].name}'s children : ").split(' ')
@@ -21,9 +24,12 @@ def CreateTree(root):
         Q[0].children = children
         for i in children:
             i.parent = Q[0]
+            i.level = i.parent.level + 1
+            dict_data[i.name] = i
         Q.popleft()
     return root
 
+dict_data = {}
 Q = deque()
 root = None
 root = CreateTree(root)
