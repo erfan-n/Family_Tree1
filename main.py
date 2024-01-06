@@ -43,9 +43,21 @@ def check_sibling(first_name,second_name):
         if dict_data[first_name].parent.name==dict_data[second_name].parent.name:
             return True
     return False
+def not_close(first_name,second_name):
+    if not dict_data[first_name].parent:
+        if check_parent(first_name,second_name):
+            return False
+    if not dict_data[second_name].parent:
+        if check_parent(second_name,first_name):
+            return False
+    if check_parent(first_name,second_name) or check_parent(second_name,first_name) or check_sibling(first_name,second_name):
+        return False
+    return True
 dict_data = {}
 test = 0
 Q = deque()
 root = None
 root = CreateTree(root)
 print(root.name)
+print(not_close('1','2'))
+print(not_close('5','6'))
