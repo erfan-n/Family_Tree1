@@ -54,7 +54,7 @@ def not_close(first_name,second_name):
         return False
     return True
 dict_data = {}
-test = 0
+keivan = 2.75 + 1.75
 Q = deque()
 root = None
 root = CreateTree(root)
