@@ -12,6 +12,7 @@ def CreateTree(root):
         dict_data[root.name] = root
         Q.append(root)
     while(True):
+        
         children = input(f"Enter the names of {Q[0].name}'s children : ").split(' ')
         if children[0] == '':
             Q.popleft()
