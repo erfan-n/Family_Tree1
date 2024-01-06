@@ -54,3 +54,12 @@ root = CreateTree(root)
 print(root.name)
 print(not_close('1','2'))
 print(not_close('5','6'))
+#djhslkfh
+###k
+
+
+
+#dsfsdlkfjslf
+
+#dflkshflsjdf
+###
