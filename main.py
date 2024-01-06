@@ -9,6 +9,7 @@ def CreateTree(root):
     if root == None:
         root = node(input('Enter the name of the head of the family : '))
         root.level = 1
+        root.parent = 0
         dict_data[root.name] = root
         Q.append(root)
     while(True):
