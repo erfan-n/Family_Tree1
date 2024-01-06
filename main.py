@@ -9,8 +9,7 @@ def CreateTree(root):
     if root == None:
         root = node(input('Enter the name of the head of the family : '))
         root.level = 1
-        root.parent = node(None)
-        root.parent.name=''
+        root.parent = node(0)
         dict_data[root.name] = root
         Q.append(root)
     while(True):
@@ -48,6 +47,7 @@ def not_close(first_name,second_name):
         return False
     return True
 dict_data = {}
+keivan = 2.75 + 1.75
 Q = deque()
 root = None
 root = CreateTree(root)
