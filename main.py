@@ -62,7 +62,7 @@ def lowest_common_ancestor(first_name,second_name):
         first_person=first_person.parent 
         second_person=second_person.parent 
     return first_person.parent.name
-def farthest_relation():
+def furthest_relation():
     max=furthest_child(root)
 dict_data = {}
 Q = deque()
